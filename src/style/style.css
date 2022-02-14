@@ -1,0 +1,77 @@
+body {
+    font-family: "Times New Roman";
+    background: rgb(149,11,137);
+    background: linear-gradient(90deg, rgba(149,11,137,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+
+h1{
+    text-align: center;
+    margin: 110px 0 40px 0;
+    font-size: 50px;
+    font-weight: inherit;
+}
+
+.note {
+    display: flex;
+    flex-direction: column;
+    width: 674.5px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.noteTitle{
+    height: 33.64px;
+    padding: 6.5px 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+
+.textArea{
+    height: 107px;
+    padding: 10px 10px;
+    margin-top: 20px;
+    outline: none;
+}
+
+.textArea:focus{
+    border-color: white;
+}
+
+.btn-group button{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-top: 26.5px;
+    border-color:  white white white white    ;
+    margin-right: 9px;
+}
+
+.btn-group button::after{
+    background: #000;
+    height: 100%;
+    width: 100%;
+}
+
+.submit{
+    margin-left: 400px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.filterNote{
+    height: 22px;
+    padding: 10px;
+    width: 327px;
+    margin-top: 30px;
+}
+
+.titleNote{
+    margin-top: 40px;
+    width: 186px;
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bolder;
+}
