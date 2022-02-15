@@ -1,7 +1,6 @@
 body {
     font-family: "Times New Roman";
-    background: rgb(149,11,137);
-    background: linear-gradient(90deg, rgba(149,11,137,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    background: linear-gradient(90deg, rgba(66, 64, 63, 1) 0%, rgba(42, 35, 35, 1) 50%, rgba(52, 45, 33, 1) 100%);
 }
 
 h1{
@@ -9,13 +8,14 @@ h1{
     margin: 110px 0 40px 0;
     font-size: 50px;
     font-weight: inherit;
+    color: white !important;
 }
 
 .note {
     display: flex;
     flex-direction: column;
     width: 674.5px;
-    justify-content: center;
+    /*justify-content: center;*/
     margin-left: auto;
     margin-right: auto;
 }
@@ -24,20 +24,14 @@ h1{
     height: 33.64px;
     padding: 6.5px 10px;
     border-radius: 5px;
-    border: none;
 }
 
 
 .textArea{
-    height: 107px;
-    padding: 10px 10px;
     margin-top: 20px;
-    outline: none;
-}
+    width: 100%;
 
-.textArea:focus{
-    border-color: white;
-}
+    }
 
 .btn-group button{
     height: 40px;
@@ -54,17 +48,19 @@ h1{
     width: 100%;
 }
 
-.submit{
+.submit {
     margin-left: 400px;
     height: 30px;
-    border-radius: 5px;
+    padding: 1px !important;
+    width: 65px !important;
+    border-radius: 6px !important;
+    font-size: 15px !important;
+    font-weight: 400 !important;
 }
 
 .filterNote{
-    height: 22px;
-    padding: 10px;
-    width: 327px;
-    margin-top: 30px;
+   width: 250px !important;
+    margin-top: 15px!important;
 }
 
 .titleNote{
@@ -74,4 +70,17 @@ h1{
     border-radius: 5px;
     border: none;
     font-weight: bolder;
+}
+
+.modal{
+    margin-top: 27px;
+    float: left;
+    margin-right: 30px;
+}
+
+.modalColor button{
+    height: 19px;
+    width: 19px;
+    border-radius: 50%;
+    margin-right: 4px;
 }
