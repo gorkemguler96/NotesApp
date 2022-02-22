@@ -28,11 +28,21 @@ export const notesSlice = createSlice({
             state.items=tempItems
             console.log(state)
         },
+
+        filteredNotes: (state,action) => {
+            const {id,color,title,note} = action.payload
+
+                const temp = state.items.filter((item)=>item.title.toLowerCase().trim().includes(title.toLocaleLowerCase().trim()))
+                return temp
+
+
+        },
+
         deleteNote: (state,action)=> {
             state.items = state.items.filter((item)=>item.id !== action.payload.id)
         }
     },
 });
 
-export const {addNote,deleteNote,updateNote} = notesSlice.actions
+export const {addNote,deleteNote,updateNote,filteredNotes} = notesSlice.actions
 export default notesSlice.reducer;

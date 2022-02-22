@@ -1,15 +1,15 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import '../style/style.css'
 import { useSelector, useDispatch } from 'react-redux'
 import  { useState } from 'react';
 import {Modal, Button, Input} from 'antd';
-import { deleteNote,updateNote } from '../redux/notes/notesSlice'
+import { deleteNote,updateNote,filteredNotes } from '../redux/notes/notesSlice'
 
 function NoteTitle(props) {
-    const { TextArea } = Input;
     const dispatch = useDispatch()
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [selectedItem,setSelectedItem] =useState("")
+    const [filteredNotes,setFilteredNotes] = useState([])
     const showModal = (item) => {
         setIsModalVisible(true);
         setSelectedItem(item)
@@ -25,13 +25,21 @@ function NoteTitle(props) {
         dispatch(deleteNote(e))
     };
     const allNote = useSelector((state)=>state.notes.items)
+    const allNoteTitle = useSelector((state)=>state.notes.items)
     const onSelectColor = (e,color) => {
         dispatch(updateNote({...e,color:color}))
     }
 
+    const filterNotes =(e) => {
+        const titles = allNoteTitle.map((item)=>item.title.toLowerCase().trim())
+        const ınputValue = e.target.value.toLowerCase().trim()
+        console.log(titles.includes(ınputValue))
+
+    }
+
     return (
         <div>
-            <Input className={"filterNote"} type="text" placeholder={"Filter Notes"}/><br/>
+            <Input onChange={filterNotes} className={"filterNote"} type="text" placeholder={"Filter Notes"}/><br/>
             {
                 selectedItem &&
                 <Modal
@@ -57,11 +65,9 @@ function NoteTitle(props) {
                             <Button style={{backgroundColor:item.color,borderColor:item.color}} type="primary" onClick={()=>showModal(item)}>
                                 {item.title}
                             </Button>
-                            <Button type="danger" onClick={()=>handleDelete(item)}>
-                                X
+                            <Button className={"deleteBtn"} type="danger" onClick={()=>handleDelete(item)}>
+                                    X
                             </Button>
-
-
                         </div>
                     </div>
                 )
