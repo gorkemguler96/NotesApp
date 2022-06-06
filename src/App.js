@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import Note from "./components/Note";
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+// import 'antd/dist/antd.less'
 
 
 
